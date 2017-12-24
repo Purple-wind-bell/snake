@@ -12,7 +12,7 @@ import java.util.LinkedList;
  */
 public class Snake extends FatherNodeSet {
 	/** 蛇的前进方向 */
-	private int forwardDirection;
+	private int direction;
 
 	/**
 	 * 蛇的构造方法
@@ -52,10 +52,10 @@ public class Snake extends FatherNodeSet {
 	 * @return true：蛇节点完成增删
 	 */
 	public boolean step(LinkedList<Node> exceptList) {
-		Node node = Tools.nextNodeStatus(List.getFirst(), this.forwardDirection, exceptList);
+		Node node = Tools.nextNodeStatus(List.getFirst(), this.direction, exceptList);
 		if (node == null) {// 下一个节点不在墙内
-			node = Tools.createNextNode(List.getFirst(), forwardDirection);
-			// this.forwardDirection = 0;// 自动跑设置，0：不自动跑
+			node = Tools.createNextNode(List.getFirst(), direction);
+			// this.direction = 0;// 自动跑设置，0：不自动跑
 			if (node != null && Tools.withinBorder(node)) {
 				List.addFirst(node);
 				List.removeLast();
@@ -88,18 +88,18 @@ public class Snake extends FatherNodeSet {
 	 * 
 	 * @return 前进方向
 	 */
-	public int getForwardDirection() {
-		return forwardDirection;
+	public int getdirection() {
+		return direction;
 	}
 
 	/**
 	 * 设置蛇的前进方向
 	 * 
-	 * @param forwardDirection
+	 * @param direction
 	 *            前进方向
 	 */
-	public void setForwardDirection(int forwardDirection) {
-		this.forwardDirection = forwardDirection;
+	public void setdirection(int direction) {
+		this.direction = direction;
 	}
 
 }

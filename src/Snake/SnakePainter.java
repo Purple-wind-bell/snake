@@ -53,7 +53,7 @@ public class SnakePainter extends JFrame {
 			public void run() {
 				// TODO Auto-generated method stub
 				while (true) {// 蛇是否前进进行判断
-					if (!snake.isDirectionConflict(snake.getForwardDirection())) {
+					if (!snake.isDirectionConflict(snake.getdirection())) {
 						snake.step(walls.getList());// 蛇去尾加头
 					}
 
@@ -111,7 +111,7 @@ public class SnakePainter extends JFrame {
 		 */
 		this.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent e) {
-				snake.setForwardDirection(e.getKeyCode());
+				snake.setdirection(e.getKeyCode());
 			}
 		});
 
