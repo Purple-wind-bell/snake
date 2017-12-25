@@ -21,7 +21,9 @@ import javax.swing.JPanel;
  * @since 1.0
  */
 public class SnakePainter extends JFrame {
-	/** 版本校验 */
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	LinkedList<Node> list = new LinkedList<Node>();
 	Iterator<Node> iterator;
@@ -115,7 +117,7 @@ public class SnakePainter extends JFrame {
 			}
 		});
 
-		// 6.定义窗体
+		/** 定义窗体 */
 		this.setUndecorated(true);
 		this.setVisible(true);// 边框可见
 		this.setResizable(true);
